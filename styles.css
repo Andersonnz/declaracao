@@ -1,0 +1,299 @@
+body {
+  background-color: #ffe6f2;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.photos-left, .photos-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.photos-left img, .photos-right img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.declaration {
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.declaration h1 {
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+.declaration p {
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.declaration video {
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.question {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.question h2 {
+  color: #e91e63;
+}
+
+.question button {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.question button:hover {
+  background-color: #d81b60;
+}
+
+#no-button {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.moving {
+  transform: translate(0, 0);
+}
+
+.message-box {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1001;
+}
+
+.message-box p {
+  font-size: 20px;
+  margin: 0;
+}
+
+.message-box button {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.message-box button:hover {
+  background-color: #d81b60;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (min-width: 768px) {
+  .container {
+      flex-direction: row;
+  }
+
+  .photos-left, .photos-right {
+      width: 150px;
+  }
+
+  .photos-left img, .photos-right img {
+      width: 100%;
+      height: auto;
+  }
+
+  .declaration {
+      padding: 0 40px;
+      text-align: left;
+  }
+
+  .declaration h1 {
+      font-size: 2em;
+  }
+
+  .declaration p {
+      font-size: 18px;
+  }
+
+  .question {
+      margin-top: 40px;
+      margin: 50px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .photos-left, .photos-right {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      margin: 10px 0;
+  }
+
+  .photos-left img, .photos-right img {
+      width: 80px;
+      height: 80px;
+  }
+
+  .declaration {
+      padding: 0 10px;
+  }
+
+  .declaration h1 {
+      font-size: 1.5em;
+  }
+
+  .declaration p {
+      font-size: 14px;
+  }
+
+  .question button {
+      padding: 8px 16px;
+      font-size: 14px;
+  }
+
+  .card {
+      width: 10%;
+      margin: 0px;
+      font-size: 1.5em;
+  }
+
+  .bg {
+    width: 10%;
+    height: 40px;
+    font-size: 1.5em;
+  }
+}
+
+
+
+/* background flutuante */
+
+.text2 { 
+  margin: 40px;
+}
+
+/* From Uiverse.io by dylanharriscameron */ 
+.card {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  border-radius: 14px;
+  z-index: 1111;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  ;
+}
+
+.bg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 98%;
+  height: 690px;
+  z-index: 2;
+  background: rgba(255, 255, 255, .95);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 2px solid white;
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 850px;
+  height: 850px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  opacity: 1;
+  filter: blur(12px);
+  animation: blob-bounce 5s infinite ease;
+}
+
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+}
